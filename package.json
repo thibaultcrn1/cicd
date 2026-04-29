@@ -6,16 +6,29 @@
   "scripts": {
     "start": "node src/index.js",
     "lint": "eslint src --max-warnings=0",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "vitest run",
+    "release": "release-it"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "eslint": "^10.2.1",
     "globals": "^17.5.0",
     "husky": "^9.1.7",
-    "vite": "^5.0.8"
+    "release-it": "^20.0.1",
+    "vite": "^5.0.8",
+    "vitest": "^4.1.5"
   },
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "release-it": {
+    "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+    "gitlab": {
+      "release": true
+    },
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    }
   }
 }
